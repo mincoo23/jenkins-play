@@ -7,6 +7,13 @@ pipeline {
       }
     }
 
+    stage('stage2') {
+      steps {
+        sh '''mkdir -p build
+echo "This is the release ${BUILD_NUMBER}" > build/release.txt'''
+      }
+    }
+
   }
   environment {
     foo = 'bar'
