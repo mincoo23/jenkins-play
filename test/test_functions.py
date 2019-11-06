@@ -1,25 +1,21 @@
-from functions import my_sum, my_subtract, my_divide, my_multiply
+from functions.functions import my_sum, my_subtract, my_divide, my_multiply
+import unittest
 
 
-def test_my_sum():
-    a = 5
-    b = 7
-    assert my_sum(a, b) == 12
+class TestSum(unittest.TestCase):
+
+    def test_my_sum(self):
+        self.assertEqual(my_sum(5, 6), 11)
+
+    def test_my_subtract(self):
+        self.assertEqual(my_subtract(5, 6), -1)
+
+    def test_my_divide(self):
+        self.assertEqual(my_divide(12, 6), 2.0)
+
+    def test_my_multiply(self):
+        self.assertEqual(my_multiply(5, 6), 30)
 
 
-def test_my_subtract():
-    a = 5
-    b = 7
-    assert my_subtract(a, b) == -2
-
-
-def test_my_divide():
-    a = 10
-    b = 2
-    assert my_divide(a, b) == 5.0
-
-
-def test_my_multiply():
-    a = 5
-    b = 7
-    assert my_multiply(a, b) == 35
+if __name__ == '__main__':
+    unittest.main()
